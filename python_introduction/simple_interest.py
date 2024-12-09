@@ -1,6 +1,6 @@
-p = 1000
-r = 0.05
-t = 3
-Interest = p*r*t
+principal = 1000
+rate = 0.05
+time = 3
+Interest = principal*rate*time
 
 print("The simple interest is:", Interest)
