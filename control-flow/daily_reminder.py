@@ -1,28 +1,27 @@
-def main():
-    print("Welcome to your Daily Reminder Program!")
+task = input("Enter your task: ")
+priority = input("Priority (high/medium/low): ").lower()
+time_bound = input("Is it time-bound? (yes/no): ").lower()
 
-    while True:
-        task = input("Enter your task: ").strip()
-        if task:
-            break
-        print("Task cannot be empty. Please enter a valid task.")
+match priority:
+    case 'high':
+        reminder = f"Reminder: '{task}' is a high priority task"
+        if time_bound == 'yes':
+            reminder += " that requires immediate attention today!"
+        else:
+            reminder += " that can be done later, but should be prioritized."
+    case 'medium':
+        reminder = f"Reminder: '{task}' is a medium priority task"
+        if time_bound == 'yes':
+            reminder += " and requires attention soon."
+        else:
+            reminder += " and can be scheduled for later."
+    case 'low':
+        reminder = f"Reminder: '{task}' is a low priority task"
+        if time_bound == 'yes':
+            reminder += " but doesn't require immediate action."
+        else:
+            reminder += " Consider completing it when you have free time."
+    case _:
+        reminder = "Invalid priority entered. Please enter high, medium, or low."
 
-    while True:
-        priority = input("Priority (high/medium/low): ").strip().lower()
-        if priority in ("high", "medium", "low"):
-            break
-        print("Invalid priority level. Please enter 'high', 'medium', or 'low'.")
-
-    while True:
-        time_bound = input("Is it time-bound? (yes/no): ").strip().lower()
-        if time_bound in ("yes", "no"):
-            break
-        print("Invalid input for time-bound. Please enter 'yes' or 'no'.")
-
-    if time_bound == "yes":
-        print(f"\nReminder: '{task}' is a {priority} priority task that requires immediate attention today!")
-    else:
-        print(f"\nReminder: '{task}' is a {priority} priority task. Consider completing it when you have free time.")
-
-if __name__ == "__main__":
-    main()
+print(reminder)
