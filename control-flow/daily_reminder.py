@@ -25,7 +25,9 @@ def main():
     else:
         reminder += ". Consider completing it when you have free time."
 
-    print("\nReminder:", reminder)
+print(f"\nReminder: {reminder}")
+
 
 if __name__ == "__main__":
     main()
+
