@@ -7,7 +7,7 @@ def get_valid_input(prompt, valid_options):
         print(f"Invalid input. Please enter one of the following: {', '.join(valid_options)}")
 
 def main():
-   
+    
     task = input("Enter your task: ").strip()
     priority = get_valid_input("Priority (high/medium/low): ", ["high", "medium", "low"])
     time_bound = get_valid_input("Is it time-bound? (yes/no): ", ["yes", "no"])
@@ -19,7 +19,7 @@ def main():
             reminder = f"'{task}' is a medium priority task."
         case "low":
             reminder = f"'{task}' is a low priority task."
-          
+
     if time_bound == "yes":
         reminder += " It requires immediate attention today!"
     else:
