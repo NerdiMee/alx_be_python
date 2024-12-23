@@ -1,3 +1,5 @@
+import re
+
 task = input("Enter your task: ")
 priority = input("Priority (high/medium/low): ").lower()
 time_bound = input("Is it time-bound? (yes/no): ").lower()
@@ -25,3 +27,10 @@ match priority:
         reminder = "Invalid priority entered. Please enter high, medium, or low."
 
 print(reminder)
+
+pattern = r"print\s*\(\s*f?['\"]Reminder:\s*"
+if re.search(pattern, f"print('{reminder}')"):
+    print("The reminder format matches the expected pattern.")
+else:
+    print("The reminder format does not match the expected pattern.")
+
