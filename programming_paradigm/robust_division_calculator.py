@@ -33,9 +33,12 @@ if __name__ == "__main__":
                 shopping_list.append(item)
                 print(f"'{item}' added to the shopping list.")
             elif choice == 2:
-                print("Shopping List:")
-                for i, item in enumerate(shopping_list, 1):
-                    print(f"{i}. {item}")
+                if shopping_list:
+                    print("Shopping List:")
+                    for i, item in enumerate(shopping_list, 1):
+                        print(f"{i}. {item}")
+                else:
+                    print("Shopping list is empty.")
             elif choice == 3:
                 print("Exiting the program.")
                 break
@@ -43,4 +46,3 @@ if __name__ == "__main__":
                 print("Invalid choice. Please select 1, 2, or 3.")
         except ValueError:
             print("Error: Please enter a valid number.")
-
